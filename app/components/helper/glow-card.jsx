@@ -1,7 +1,7 @@
 "use client";
-import { useEffect } from 'react';
 
-// Escape special characters for valid CSS selectors
+import { useEffect } from "react";
+
 const escapeIdentifier = (identifier) => {
   return identifier.replace(/[^a-zA-Z0-9-_]/g, "-");
 };
@@ -10,8 +10,12 @@ const GlowCard = ({ children, identifier }) => {
   const escapedIdentifier = escapeIdentifier(identifier);
 
   useEffect(() => {
+    if (typeof document === "undefined") return; // SSR guard
+
     const CONTAINER = document.querySelector(`.glow-container-${escapedIdentifier}`);
     const CARDS = document.querySelectorAll(`.glow-card-${escapedIdentifier}`);
+
+    if (!CONTAINER || !CARDS.length) return; // Check if elements exist
 
     const CONFIG = {
       proximity: 40,
@@ -32,9 +36,9 @@ const GlowCard = ({ children, identifier }) => {
           event?.y > CARD_BOUNDS.top - CONFIG.proximity &&
           event?.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
         ) {
-          CARD.style.setProperty('--active', 1);
+          CARD.style.setProperty("--active", 1);
         } else {
-          CARD.style.setProperty('--active', CONFIG.opacity);
+          CARD.style.setProperty("--active", CONFIG.opacity);
         }
 
         const CARD_CENTER = [
@@ -49,28 +53,25 @@ const GlowCard = ({ children, identifier }) => {
 
         ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
 
-        CARD.style.setProperty('--start', ANGLE + 90);
+        CARD.style.setProperty("--start", ANGLE + 90);
       }
     };
 
-    document.body.addEventListener('pointermove', UPDATE);
-
     const RESTYLE = () => {
-      CONTAINER?.style.setProperty('--gap', CONFIG.gap);
-      CONTAINER?.style.setProperty('--blur', CONFIG.blur);
-      CONTAINER?.style.setProperty('--spread', CONFIG.spread);
-      CONTAINER?.style.setProperty(
-        '--direction',
-        CONFIG.vertical ? 'column' : 'row'
+      CONTAINER.style.setProperty("--gap", CONFIG.gap);
+      CONTAINER.style.setProperty("--blur", CONFIG.blur);
+      CONTAINER.style.setProperty("--spread", CONFIG.spread);
+      CONTAINER.style.setProperty(
+        "--direction",
+        CONFIG.vertical ? "column" : "row"
       );
     };
 
     RESTYLE();
-    UPDATE();
+    document.body.addEventListener("pointermove", UPDATE);
 
-    // Cleanup event listener
     return () => {
-      document.body.removeEventListener('pointermove', UPDATE);
+      document.body.removeEventListener("pointermove", UPDATE);
     };
   }, [escapedIdentifier]);
 
