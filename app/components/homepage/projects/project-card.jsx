@@ -30,17 +30,17 @@ function ProjectCard({ project }) {
           {/* Name */}
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
-            <span className="text-gray-400">'</span>
+            <span className="text-gray-400">&quot;</span>
             <span className="text-amber-300">{name}</span>
-            <span className="text-gray-400">',</span>
+            <span className="text-gray-400">&quot;,</span>
           </div>
 
           {/* Duration */}
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">duration:</span>
-            <span className="text-gray-400">'</span>
+            <span className="text-gray-400">&quot;</span>
             <span className="text-amber-300">{duration}</span>
-            <span className="text-gray-400">',</span>
+            <span className="text-gray-400">&quot;,</span>
           </div>
 
           {/* Team Size */}
@@ -53,58 +53,56 @@ function ProjectCard({ project }) {
           {/* Position */}
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">position:</span>
-            <span className="text-gray-400">'</span>
+            <span className="text-gray-400">&quot;</span>
             <span className="text-cyan-400">{position}</span>
-            <span className="text-gray-400">',</span>
+            <span className="text-gray-400">&quot;,</span>
           </div>
 
           {/* Source */}
-          {/* Source */}
-<div className="ml-4 lg:ml-8 mr-2">
-  <span className="text-white">source:</span>
-  <span className="text-gray-400">{' {'}</span>
-  {source.frontend && (
-    <div className="ml-8">
-      <span className="text-white">frontend:</span>
-      <span className="text-gray-400">'</span>
-      <a href={source.frontend} className="text-blue-400 underline" target="_blank" rel="noopener noreferrer">
-        {source.frontend}
-      </a>
-      <span className="text-gray-400">',</span>
-    </div>
-  )}
-  {source.backend && (
-    <div className="ml-8">
-      <span className="text-white">backend:</span>
-      <span className="text-gray-400">'</span>
-      <a href={source.backend} className="text-blue-400 underline" target="_blank" rel="noopener noreferrer">
-        {source.backend}
-      </a>
-      <span className="text-gray-400">',</span>
-    </div>
-  )}
-  {source.code && (
-    <div className="ml-8">
-      <span className="text-white">code:</span>
-      <span className="text-gray-400">'</span>
-      <a href={source.code} className="text-blue-400 underline" target="_blank" rel="noopener noreferrer">
-        {source.code}
-      </a>
-      <span className="text-gray-400">',</span>
-    </div>
-  )}
-  <span className="text-gray-400">{' },'}</span>
-</div>
-
+          <div className="ml-4 lg:ml-8 mr-2">
+            <span className="text-white">source:</span>
+            <span className="text-gray-400">{'{'}</span>
+            {source.frontend && (
+              <div className="ml-8">
+                <span className="text-white">frontend:</span>
+                <span className="text-gray-400">&quot;</span>
+                <a href={source.frontend} className="text-blue-400 underline" target="_blank" rel="noopener noreferrer">
+                  {source.frontend}
+                </a>
+                <span className="text-gray-400">&quot;,</span>
+              </div>
+            )}
+            {source.backend && (
+              <div className="ml-8">
+                <span className="text-white">backend:</span>
+                <span className="text-gray-400">&quot;</span>
+                <a href={source.backend} className="text-blue-400 underline" target="_blank" rel="noopener noreferrer">
+                  {source.backend}
+                </a>
+                <span className="text-gray-400">&quot;,</span>
+              </div>
+            )}
+            {source.code && (
+              <div className="ml-8">
+                <span className="text-white">code:</span>
+                <span className="text-gray-400">&quot;</span>
+                <a href={source.code} className="text-blue-400 underline" target="_blank" rel="noopener noreferrer">
+                  {source.code}
+                </a>
+                <span className="text-gray-400">&quot;,</span>
+              </div>
+            )}
+            <span className="text-gray-400">{'}'},</span>
+          </div>
 
           {/* Technologies */}
           <div className="ml-4 lg:ml-8 mr-2">
             <span className=" text-white">technologies:</span>
-            <span className="text-gray-400">{' {'}</span>
+            <span className="text-gray-400">{'{'}</span>
             {Object.entries(technologies).map(([key, value], i) => (
               <div key={i} className="ml-8">
                 <span className="text-white">{key}:</span>
-                <span className="text-gray-400"> [</span>
+                <span className="text-gray-400">[</span>
                 {value.map((tech, j) => (
                   <React.Fragment key={j}>
                     <span className="text-amber-300">{tech}</span>
@@ -114,23 +112,23 @@ function ProjectCard({ project }) {
                 <span className="text-gray-400">],</span>
               </div>
             ))}
-            <span className="text-gray-400">{' },'}</span>
+            <span className="text-gray-400">{'}'},</span>
           </div>
 
           {/* Features */}
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">features:</span>
-            <span className="text-gray-400">'</span>
+            <span className="text-gray-400">&quot;</span>
             <span className="text-cyan-400">{features}</span>
-            <span className="text-gray-400">',</span>
+            <span className="text-gray-400">&quot;,</span>
           </div>
 
           {/* Responsibilities */}
           <div>
             <span className="ml-4 lg:ml-8 mr-2 text-white">responsibilities:</span>
-            <span className="text-gray-400">'</span>
+            <span className="text-gray-400">&quot;</span>
             <span className="text-cyan-400">{responsibilities}</span>
-            <span className="text-gray-400">',</span>
+            <span className="text-gray-400">&quot;,</span>
           </div>
 
           {/* Project Object End */}

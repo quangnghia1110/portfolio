@@ -23,7 +23,7 @@ function HeroSection() {
           <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
             Hello, <br />
             This is{" "}
-            <span className="text-pink-500">Ngo Quang Nghia</span>,{` I'm a `}
+            <span className="text-pink-500">Ngo Quang Nghia</span>,{` I&#39;m a `}
             <span className="text-[#16f2b3]">Software Engineer</span>.
           </h1>
 
@@ -52,19 +52,18 @@ function HeroSection() {
           </div>
 
           <div className="flex items-center gap-3">
-  <Link
-    className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
-    role="button"
-    href="/CV_NgoQuangNghia.pdf" 
-    download="CV_NgoQuangNghia.pdf" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    <span>Get Resume</span>
-    <MdDownload size={16} />
-  </Link>
-</div>
-
+            <Link
+              className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
+              role="button"
+              href="/CV_NgoQuangNghia.pdf"
+              download="CV_NgoQuangNghia.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Get Resume</span>
+              <MdDownload size={16} />
+            </Link>
+          </div>
         </div>
 
         {/* Right Section */}
@@ -86,21 +85,21 @@ function HeroSection() {
                 <span className="mr-2 text-pink-500">const</span>
                 <span className="mr-2 text-white">contactInfo</span>
                 <span className="mr-2 text-pink-500">=</span>
-                <span className="text-gray-400">{'{'}</span>
+                <span className="text-gray-400">{"{"}</span>
               </div>
 
               {/* Contact Details */}
               <div className="ml-4 lg:ml-8">
                 <span className="text-white">location:</span>{" "}
-                <span className="text-cyan-400">'Thu Duc Province, Ho Chi Minh City'</span>,
+                <span className="text-cyan-400">&quot;Thu Duc Province, Ho Chi Minh City&quot;</span>,
               </div>
               <div className="ml-4 lg:ml-8">
                 <span className="text-white">phone:</span>{" "}
-                <span className="text-cyan-400">'0974117373'</span>,
+                <span className="text-cyan-400">&quot;0974117373&quot;</span>,
               </div>
               <div className="ml-4 lg:ml-8">
                 <span className="text-white">email:</span>{" "}
-                <span className="text-cyan-400">'ngoquangnghia111003@gmail.com'</span>,
+                <span className="text-cyan-400">&quot;ngoquangnghia111003@gmail.com&quot;</span>,
               </div>
               <div className="ml-4 lg:ml-8">
                 <span className="text-white">github:</span>{" "}
@@ -110,7 +109,7 @@ function HeroSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  'https://github.com/quangnghia1110'
+                  &quot;https://github.com/quangnghia1110&quot;
                 </a>
                 ,
               </div>
@@ -122,7 +121,7 @@ function HeroSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  'https://www.linkedin.com/in/ngoquangnghia111003'
+                  &quot;https://www.linkedin.com/in/ngoquangnghia111003&quot;
                 </a>
                 ,
               </div>
@@ -134,13 +133,13 @@ function HeroSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  'https://www.facebook.com/quangnghia559/'
+                  &quot;https://www.facebook.com/quangnghia559/&quot;
                 </a>
                 ,
               </div>
 
               <div>
-                <span className="text-gray-400">{'}'}</span>
+                <span className="text-gray-400">{"}"}</span>
               </div>
             </code>
           </div>
