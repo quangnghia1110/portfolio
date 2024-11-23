@@ -1,12 +1,14 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "homepage": "https://quangnghia1110.github.io/portfolio",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "npm run build && gh-pages -d out"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.1",
@@ -30,6 +32,7 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.2",
+    "gh-pages": "^5.0.0",
     "postcss": "latest",
     "sass": "^1.69.5",
     "tailwindcss": "latest"
